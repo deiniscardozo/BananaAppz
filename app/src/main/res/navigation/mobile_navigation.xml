@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_thirds"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.products.ProductsFragment"
+        tools:layout="@layout/fragment_thirds" >
+        <action
+            android:id="@+id/action_nav_thirds_to_nav_thirds_detail"
+            app:destination="@id/nav_thirds_detail" />
+        <action
+            android:id="@+id/action_nav_thirds_to_contactFragment2"
+            app:destination="@id/contactFragment2" />
+        <action
+            android:id="@+id/action_nav_thirds_to_archivosFragment"
+            app:destination="@id/archivosFragment" />
+        <action
+            android:id="@+id/action_nav_thirds_to_documentsFragment"
+            app:destination="@id/documentsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_thirds_detail"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.thirds.ThirdsFragment"
+        tools:layout="@layout/fragment_thirds_detail" >
+        <action
+            android:id="@+id/action_nav_thirds_detail_to_nav_thirds"
+            app:destination="@id/nav_thirds" />
+        <action
+            android:id="@+id/action_nav_thirds_detail_to_nav_nav"
+            app:destination="@id/nav_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment2"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.thirds_detail.contact.ContactFragment"
+        tools:layout="@layout/fragment_contact">
+        <action
+            android:id="@+id/action_contactFragment2_to_nav_thirds"
+            app:destination="@id/nav_thirds" />
+        <action
+            android:id="@+id/action_contactFragment2_to_nav_nav"
+            app:destination="@id/nav_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/documentsFragment"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.thirds_detail.documents.DocumentsFragment"
+        tools:layout="@layout/fragment_documents">
+        <action
+            android:id="@+id/action_documentsFragment_to_nav_nav"
+            app:destination="@id/nav_nav" />
+        <action
+            android:id="@+id/action_documentsFragment_to_nav_thirds"
+            app:destination="@id/nav_thirds" />
+    </fragment>
+    <fragment
+        android:id="@+id/archivosFragment"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.thirds_detail.archivos.ArchivosFragment"
+        tools:layout="@layout/fragment_archivos">
+        <action
+            android:id="@+id/action_archivosFragment_to_nav_nav"
+            app:destination="@id/nav_nav" />
+        <action
+            android:id="@+id/action_archivosFragment_to_nav_thirds"
+            app:destination="@id/nav_thirds" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_nav"
+            app:destination="@id/nav_nav" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_nav"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.home.NavFragment"
+        tools:layout="@layout/fragment_nav" >
+        <action
+            android:id="@+id/action_nav_nav_to_nav_thirds"
+            app:destination="@id/nav_thirds" />
+        <action
+            android:id="@+id/action_nav_nav_to_nav_products"
+            app:destination="@id/nav_products" />
+    </fragment>
+
+    <fragment android:id="@+id/nav_products"
+        android:name="com.overcom.bananaapp.ui.view.fragmentes.products.ProductsFragment"
+        tools:layout="@layout/fragment_products"/>
+</navigation>

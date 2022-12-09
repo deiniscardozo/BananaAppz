@@ -1,0 +1,92 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "59d1d5724cbcc03508909ca611b94908",
+    "entities": [
+      {
+        "tableName": "products_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`idApp` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `product_detail_id` INTEGER, `name` TEXT, `reference` TEXT, `image` TEXT, `ean13` TEXT, `netprice` TEXT, `sku` TEXT, `stock` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "idApp",
+            "columnName": "idApp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "product_detail_id",
+            "columnName": "product_detail_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "reference",
+            "columnName": "reference",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ean13",
+            "columnName": "ean13",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "netprice",
+            "columnName": "netprice",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sku",
+            "columnName": "sku",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stock",
+            "columnName": "stock",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "idApp"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_products_table_reference",
+            "unique": true,
+            "columnNames": [
+              "reference"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_products_table_reference` ON `${TABLE_NAME}` (`reference`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '59d1d5724cbcc03508909ca611b94908')"
+    ]
+  }
+}
